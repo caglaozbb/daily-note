@@ -2,11 +2,11 @@ import { useState } from 'react'
 import './App.css'
 import NoteForm from './components/NoteForm'
 import { useEffect } from 'react';
+import Header from './components/Header';
 
 function App() {
 
   const [currentDate, setCurrentDate] = useState(new Date());
-  console.log(currentDate);
 
   function getFormattedDate(date, dayOffset = 0) {
     const newDate = new Date(date);
@@ -30,26 +30,42 @@ function App() {
   const today = getFormattedDate(currentDate);
   const yesterday = getFormattedDate(currentDate, -1);
 
+  useEffect(() => {
+    const onKeyUp = (e) => {
+      switch (e.keyCode) {
+        case 37:
+          goPreviousDay()
+          break;
+        case 39:
+          goNextDay()
+          break;
+      }
+    }
+    document.addEventListener("keyup", onKeyUp)
+
+    return () => document.removeEventListener("keyup", onKeyUp)
+  }, [])
+
 
   return (
-    <>
-      <div></div>
-      <div className="profile-section">
-        <img src="space.jpeg" alt="Profile" className="profile-pic" />
-      </div>
+    <main>
+      <Header />
 
       <div className="container">
         <div className="side ">
           <NoteForm id={getFormattedDate(currentDate, -1)}>{yesterday}</NoteForm>
-          <div className="page-turn left-arrow" onClick={goPreviousDay}>&larr;</div>
         </div>
 
         <div className="side">
           <NoteForm id={getFormattedDate(currentDate)}>{today}</NoteForm>
-          <div className="page-turn right-arrow" onClick={goNextDay} >&rarr;</div>
         </div>
       </div>
-    </>
+
+      <div className="page-turn">
+        <div onClick={goPreviousDay}>&larr;</div>
+        <div onClick={goNextDay} >&rarr;</div>
+      </div>
+    </main>
   )
 }
 

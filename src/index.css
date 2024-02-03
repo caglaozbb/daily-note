@@ -1,20 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-image: linear-gradient(to top, #1f2544, #262c4e, #2e3458, #353c62, #3d446c, #454a74, #4d4f7b, #555583, #605a8a, #6b5f91, #766397, #81689d);
-  /* background-image: linear-gradient(to top, #9a3b3b, #a24940, #a95746, #b0644d, #b77155, #bd7c5c, #c38864, #c9936d, #cfa077, #d6ad81, #dcba8d, #e2c799); */
-
+  background-color: #574b90;
   background-attachment: fixed;
-  /* Scroll ile arka planın sabit kalmasını sağlar */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 
 }

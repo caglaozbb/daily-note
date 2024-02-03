@@ -3,11 +3,9 @@ import { useEffect } from 'react'
 
 function NoteForm({ id, children }) {
     const storageKey = `notes-${id}`;
-    console.log(`Storage key for this form: ${storageKey}`);
 
     const [data, setData] = useState(() => {
         const savedData = localStorage.getItem(storageKey);
-        console.log('Loaded data from localStorage:', savedData);
         return savedData ? JSON.parse(savedData) : { todo: '', update: '', sync: '' };
     });
 
@@ -21,30 +19,31 @@ function NoteForm({ id, children }) {
     }, [storageKey, data]);
 
     const handleChange = (name, value) => {
-        console.log(`Updating ${name}:`, value);
         setData(prevData => ({ ...prevData, [name]: value }));
     };
 
 
     return (
-        <div>
-            <div className="page-content">{children}</div>
-            <textarea id='`${id}-todo'
-                placeholder="todo"
-                value={data.todo}
-                onChange={e => handleChange('todo', e.target.value)}
-            />
-            <textarea id='`${id}-update'
-                placeholder="update"
-                value={data.update}
-                onChange={e => handleChange('update', e.target.value)}
-            />
-            <textarea id='`${id}-sync'
-                placeholder="sync"
-                value={data.sync}
-                onChange={e => handleChange('sync', e.target.value)}
-            />
-        </div>
+        <>
+            <div className="page-header">{children}</div>
+            <div className='page-content'>
+                <textarea
+                    placeholder="todo"
+                    value={data.todo}
+                    onChange={e => handleChange('todo', e.target.value)}
+                />
+                <textarea
+                    placeholder="update"
+                    value={data.update}
+                    onChange={e => handleChange('update', e.target.value)}
+                />
+                <textarea
+                    placeholder="sync"
+                    value={data.sync}
+                    onChange={e => handleChange('sync', e.target.value)}
+                />
+            </div>
+        </>
     )
 
 }
