@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -54,6 +54,16 @@ header ul {
   justify-content: center;
   flex-direction: column;
 
+}
+
+@media (max-width:600px) {
+  .container {
+    flex-direction: column;
+  }
+}
+
+.side:first-child {
+  border-right: 1px solid #f5f6fa;
 }
 
 .page-header {
