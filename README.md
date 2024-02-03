@@ -1,8 +1,37 @@
-# React + Vite
+# Daily Note
+<p align="center">
+  <img width="400" src="./public/example.jpeg" />
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Daily Note is an web application that you can use to take notes for daily meetings. It works offline and keep storage at your browser.
 
-Currently, two official plugins are available:
+## Motivation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The daily meetings are important to keep the team updated and aligned. You can take small notes to remember what are you going to say in the next meeting. The app solves it with 3 field:
+
+- **Todo**: What are you planning to do
+- **Update**: What have you completed
+- **Sync**: Should you talk with other team members about something, or block something
+
+## Features
+
+Here are the amazing features of the app:
+
+- **Offline**: The app works offline
+- **Storage**: Stores the data at local storage
+- **Simple**: Just 3 fields to fill
+- **Auto Save**: The app saves the data automatically
+- **Responsive**: Works on mobile and desktop
+
+## Development
+
+You can run the app with the following commands:
+```bash
+// clone the repo
+pnpm install
+pnpm dev
+```
+
+## License
+
+MIT
