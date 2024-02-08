@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import Header from './components/Header';
 
 function App() {
-
   const [currentDate, setCurrentDate] = useState(new Date());
 
   function getFormattedDate(date, dayOffset = 0) {
@@ -49,22 +48,25 @@ function App() {
 
   return (
     <main>
-      <Header />
+      <div className='wrapper'>
+        <Header />
 
-      <div className="container">
-        <div className="side ">
-          <NoteForm id={getFormattedDate(currentDate, -1)}>{yesterday}</NoteForm>
+        <div className="container">
+          <div className="side ">
+            <NoteForm id={getFormattedDate(currentDate, -1)}>{yesterday}</NoteForm>
+          </div>
+
+          <div className="side">
+            <NoteForm id={getFormattedDate(currentDate)}>{today}</NoteForm>
+          </div>
         </div>
 
-        <div className="side">
-          <NoteForm id={getFormattedDate(currentDate)}>{today}</NoteForm>
+        <div className="page-turn">
+          <div onClick={goPreviousDay}>&larr;</div>
+          <div onClick={goNextDay} >&rarr;</div>
         </div>
       </div>
 
-      <div className="page-turn">
-        <div onClick={goPreviousDay}>&larr;</div>
-        <div onClick={goNextDay} >&rarr;</div>
-      </div>
     </main>
   )
 }

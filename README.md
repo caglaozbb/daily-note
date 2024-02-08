@@ -22,6 +22,7 @@ Here are the amazing features of the app:
 - **Simple**: Just 3 fields to fill
 - **Auto Save**: The app saves the data automatically
 - **Responsive**: Works on mobile and desktop
+- **Theme**: Dark and Light themes
 
 ## Development
 

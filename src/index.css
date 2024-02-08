@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
 }
 
 :root {
@@ -7,7 +9,6 @@
   line-height: 1.5;
   font-weight: 400;
 
-  background-color: #574b90;
   background-attachment: fixed;
 
   font-synthesis: none;
@@ -15,4 +16,31 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  --color-primary: #574b90;
+  --color-background: var(--color-primary);
+  --color-foreground: white;
+  --color-text: black;
+  --color-foreground-muted: #f5f6fa;
+}
+
+main {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: var(--color-background);
+  margin: 0 auto;
+  padding: 2rem;
+  color: var(--color-text);
+}
+
+a {
+  color: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+  main {
+    --color-background: #1e2124;
+    --color-foreground: #36393e;
+    --color-text: white;
+    --color-foreground-muted: #424549;
+  }
 }

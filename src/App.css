@@ -1,25 +1,20 @@
-#root {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
 .container {
   display: flex;
-  background-color: #fff;
-  color: black;
+  background-color: var(--color-foreground);
   border-radius: 10px;
   overflow: hidden;
 }
 
-main {
+.wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
 header {
-  background-color: #fff;
+  background-color: var(--color-foreground);
   border-radius: 10px;
   padding: 10px 14px;
   display: flex;
@@ -33,8 +28,7 @@ header h1 {
 }
 
 header h1 span {
-  color: #5758BB;
-
+  color: var(--color-primary);
 }
 
 header ul {
@@ -53,7 +47,6 @@ header ul {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
 }
 
 @media (max-width:600px) {
@@ -63,23 +56,22 @@ header ul {
 }
 
 .side:first-child {
-  border-right: 1px solid #f5f6fa;
+  border-right: 1px solid var(--color-foreground-muted);
 }
 
 .page-header {
   font-size: 1rem;
   display: flex;
   justify-content: center;
-  background-color: #f5f6fa;
   width: 100%;
   padding: 10px 0px;
   font-weight: 500;
+  background-color: var(--color-foreground-muted);
 }
 
 .page-content {
   padding: 10px;
 }
-
 
 .page-turn {
   font-size: 2rem;
@@ -89,7 +81,6 @@ header ul {
   justify-content: space-around;
   padding: 10px 0;
 }
-
 
 textarea {
   height: 120px;
@@ -101,8 +92,9 @@ textarea {
   width: 100%;
   padding: 10px;
   resize: none;
+  background-color: transparent;
+  color: inherit;
 }
-
 
 textarea:focus {
   outline-color: #5758BB;
